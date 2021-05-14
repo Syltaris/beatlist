@@ -1,4 +1,6 @@
 const path = require("path");
+const webpack = require("webpack");
+const fs_extra = require("fs-extra");
 
 module.exports = {
   pluginOptions: {
@@ -13,6 +15,12 @@ module.exports = {
     },
   },
   configureWebpack: {
+    // plugins: [
+    //   new webpack.DefinePlugin({
+    //     "process.version": JSON.stringify(process.version),
+    //   }),
+    // ],
+    target: "electron-renderer",
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
